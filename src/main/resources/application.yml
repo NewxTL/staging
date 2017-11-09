@@ -1,15 +1,17 @@
 server:
   port: 8089
 spring:
+  #指定默认启动配置文件
+  profiles:
+      #即指定的启动文件为application-local.yml
+      active: local
   application:
-    name: staging
-    profiles:
-        active: local
-    devtools:
-        restart:
-            enabled: true
-        livereload:
-            enabled: false
+      name: staging
+      devtools:
+          restart:
+              enabled: true
+          livereload:
+              enabled: false
   session:
       store-type: none
 schedule:
@@ -17,9 +19,8 @@ schedule:
         corePoolSize: 2
         maxPoolSize: 50
         queueCapacity: 10000
+#加载liquibase
 liquibase:
   change-log:
     classpath:/liquibase/master.xml
-#logging:
-#  config:
-#    classpath: /config/logback/logback-stage.xml
+
