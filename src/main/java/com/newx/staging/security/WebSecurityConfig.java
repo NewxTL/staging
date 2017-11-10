@@ -22,6 +22,7 @@ public class WebSecurityConfig  extends WebSecurityConfigurerAdapter {
                 .csrf().disable() // oauth server 不需要 csrf 防护
                 .authorizeRequests()
                 .antMatchers("/public/**").permitAll()  // public 路径不需要认证即可访问
+                .antMatchers("/oauth/token").permitAll()
                 .anyRequest().authenticated()   //其他页面都需要登录后访问
                 .and()
                 .httpBasic();           // basic 认证

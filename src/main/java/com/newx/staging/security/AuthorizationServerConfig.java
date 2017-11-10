@@ -1,6 +1,5 @@
 package com.newx.staging.security;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -21,10 +20,11 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
 @EnableResourceServer //必须
 @EnableAuthorizationServer // 必须
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
-    @Autowired
+
     UserDetailsService userDetailsService; // 引入security中提供的 UserDetailsService
-    @Autowired
+
     AuthenticationManager authenticationManager; // 引入security中提供的 AuthenticationManager
+
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
         security
@@ -35,11 +35,10 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-                .withClient("client_id") // 配置默认的client
-                .secret("client_secret")
-                .authorizedGrantTypes(
-                        "password", "refresh_token")
-                .scopes("read").autoApprove("read");
+                .withClient("client_id")            // basic认证的用户名
+                .secret("client_secret")            //basic认证的密码
+                .authorizedGrantTypes("client_credentials")        //请求体grant_type对应的值
+                .scopes("read", "write").autoApprove("read");       //请求体scope对应的值
 
     }
 
