@@ -17,7 +17,6 @@ import org.springframework.security.oauth2.provider.token.store.InMemoryTokenSto
  * Created by Newx on 2017/11/7.
  */
 @Configuration
-@EnableResourceServer //必须
 @EnableAuthorizationServer // 必须
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 

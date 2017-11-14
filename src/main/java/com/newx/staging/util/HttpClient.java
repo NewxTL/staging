@@ -53,7 +53,7 @@
 //     * 获取OAuth2RestTemplate
 //     * @return OAuth2RestTemplate
 //     */
-//    public OAuth2RestTemplate getHlyOAuth2RestTemplate() {
+//    public OAuth2RestTemplate getDemoOAuth2RestTemplate() {
 //        OAuth2RestTemplate restTemplate = new OAuth2RestTemplate(resourceDetails(), new DefaultOAuth2ClientContext());
 //        SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
 //        requestFactory.setReadTimeout(CONNECTION_READ_TIMEOUT);
@@ -69,7 +69,7 @@
 //     * 获取处理Query Params OAuth2RestTemplate（自动进行xxx的安全认证），会自动解析传入的Query Params参数
 //     * @return OAuth2RestTemplate
 //     */
-//    public OAuth2RestTemplate getHlyQueryParamsOAuth2RestTemplate() {
+//    public OAuth2RestTemplate getDemoQueryParamsOAuth2RestTemplate() {
 //        OAuth2RestTemplate restTemplate = new OAuth2RestTemplate(resourceDetails(), new DefaultOAuth2ClientContext());
 //        SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
 //        requestFactory.setReadTimeout(CONNECTION_READ_TIMEOUT);
@@ -157,8 +157,8 @@
 //     * @param requestEntity
 //     * @return
 //     */
-//    public ResponseEntity<String> exchangeHly(RequestEntity<?> requestEntity){
-//        OAuth2RestTemplate oAuth2RestTemplate = getHlyOAuth2RestTemplate();
+//    public ResponseEntity<String> exchangeDemo(RequestEntity<?> requestEntity){
+//        OAuth2RestTemplate oAuth2RestTemplate = getDemoOAuth2RestTemplate();
 //        return oAuth2RestTemplate.exchange(requestEntity, String.class);
 //    }
 //
@@ -168,8 +168,8 @@
 //     * @param uriVariables path params 和query params的map
 //     * @return
 //     */
-//    public ResponseEntity<String> exchangeHly(RequestEntity<?> requestEntity, Map<String, Object> uriVariables){
-//        RestTemplate restTemplate = getHlyQueryParamsOAuth2RestTemplate();
+//    public ResponseEntity<String> exchangeDemo(RequestEntity<?> requestEntity, Map<String, Object> uriVariables){
+//        RestTemplate restTemplate = getDemoQueryParamsOAuth2RestTemplate();
 //        return restTemplate.exchange(requestEntity.getUrl().toString(), requestEntity.getMethod(), requestEntity, String.class, uriVariables);
 //    }
 //
