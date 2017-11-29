@@ -10,25 +10,13 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "demo")
-public class Demo implements Serializable{
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+public class Demo extends BaseEntity{
 
     @Column
     private String name;
 
     @Column
     private String age;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

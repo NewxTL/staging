@@ -22,4 +22,13 @@
         </createTable>
     </changeSet>
 
+    <changeSet id="20171107.add.column" author="newx">
+        <addColumn tableName="demo">
+            <column name="create_date" type="datetime">
+            </column>
+            <column name="last_update" type="datetime">
+            </column>
+        </addColumn>
+    </changeSet>
+
 </databaseChangeLog>
