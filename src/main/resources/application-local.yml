@@ -36,15 +36,4 @@ custom:
       username: sa
       password: 123456
 logging:
-  config:
-    classpath: /config/logback/logback-stage.xml
-#security:
-#    oauth2:
-#        client:
-#            access-token-uri: http://localhost:8888/oauth/token
-#            client-id: client_id
-#            client-secret: client_secret
-#            client-authentication-scheme: form
-#            grant-type: client_credentials
-#        resource:
-#            user-info-uri: http://localhost:8888/check_token
+  config: classpath:config/logback/logback-stage.xml

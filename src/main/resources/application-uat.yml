@@ -36,5 +36,4 @@ custom:
       username: sa
       password: 123456
 logging:
-  config:
-    classpath: /config/logback/logback-stage.xml
+  config: classpath:config/logback/logback-uat.xml
