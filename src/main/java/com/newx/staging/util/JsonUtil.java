@@ -4,7 +4,6 @@ import net.sf.json.JSON;
 import net.sf.json.JSONException;
 import net.sf.json.JSONObject;
 import net.sf.json.xml.XMLSerializer;
-import org.codehaus.jackson.map.ObjectMapper;
 
 import java.io.IOException;
 
@@ -32,15 +31,7 @@ public class JsonUtil {
     }
 
     public static<T> String objectToJson(T obj) throws JSONException, IOException {
-        ObjectMapper mapper = new ObjectMapper();
-        // Convert object to JSON string
-        String jsonStr = "";
-        try {
-            jsonStr =  mapper.writeValueAsString(obj);
-        } catch (IOException e) {
-            throw e;
-        }
-        return JSONObject.fromObject(obj).toString();
+        return com.alibaba.fastjson.JSON.toJSONString(obj);
     }
 }
 
