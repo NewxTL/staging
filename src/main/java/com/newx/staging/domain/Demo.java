@@ -1,7 +1,10 @@
 package com.newx.staging.domain;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import lombok.Data;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * 实体类的属性字段使用驼峰命名法，就可以直接映射到数据库字段
@@ -10,6 +13,7 @@ import java.io.Serializable;
  */
 @Entity
 @Table(name = "demo")
+@Data
 public class Demo extends BaseEntity{
 
     @Column
@@ -18,19 +22,4 @@ public class Demo extends BaseEntity{
     @Column
     private String age;
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
 }

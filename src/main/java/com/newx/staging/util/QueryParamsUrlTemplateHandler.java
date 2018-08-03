@@ -9,7 +9,7 @@ import java.net.URI;
 import java.util.Map;
 
 /**
- * Created by jiaquan on 2016/12/19.
+ * Created by xinx on 2016/12/19.
  * 用于处理query parameters
  */
 public class QueryParamsUrlTemplateHandler extends DefaultUriTemplateHandler {

@@ -1,5 +1,7 @@
 package com.newx.staging.domain;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -9,6 +11,7 @@ import java.time.LocalDateTime;
  * Created by Newx on 2017/11/29.
  */
 @MappedSuperclass
+@Data
 public class BaseEntity implements Serializable{
 
     @Id
@@ -21,27 +24,4 @@ public class BaseEntity implements Serializable{
     @Column
     private LocalDateTime lastUpdate;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public LocalDateTime getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(LocalDateTime createDate) {
-        this.createDate = createDate;
-    }
-
-    public LocalDateTime getLastUpdate() {
-        return lastUpdate;
-    }
-
-    public void setLastUpdate(LocalDateTime lastUpdate) {
-        this.lastUpdate = lastUpdate;
-    }
 }
