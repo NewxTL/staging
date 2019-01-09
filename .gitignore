@@ -124,3 +124,4 @@ logback-local.xml
 # 忽略个人文件
 *-patch*.diff
 src/main/resources/config/logback/logback-local.xml
+.gitignore

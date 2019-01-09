@@ -22,18 +22,18 @@ spring:
 
 custom:
   datasource:
-    names: ds1,ds2
+    names: ds1
     ds1:
       driver-class-name: com.mysql.jdbc.Driver
       url: jdbc:mysql://127.0.0.1:3306/demo?useUnicode=true&characterEncoding=utf8
       name:
       username: root
       password: 123456
-    ds2:
-      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-      url: jdbc:sqlserver://127.0.0.1:1433;databaseName=demo;
-      name:
-      username: sa
-      password: 123456
+#    ds2:
+#      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#      url: jdbc:sqlserver://127.0.0.1:1433;databaseName=demo;
+#      name:
+#      username: sa
+#      password: 123456
 logging:
   config: classpath:config/logback/logback-stage.xml

@@ -3,7 +3,7 @@ package com.newx.staging.config;
 import java.lang.annotation.*;
 
 /**
- * Created by Nicholas on 2017/10/21.
+ * Created by Newx on 2017/10/21.
  */
 
 @Target({ ElementType.METHOD, ElementType.TYPE })
